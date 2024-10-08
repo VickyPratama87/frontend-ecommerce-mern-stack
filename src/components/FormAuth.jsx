@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Link } from 'react-router-dom';
 import FormInput from './Form/FormInput';
+import Button from './ui/Button';
 
 const FormAuth = ({ isRegister }) => {
 	return (
@@ -31,29 +32,29 @@ const FormAuth = ({ isRegister }) => {
 				/>
 
 				<div className="mt-5">
-					<button
+					<Button
 						type="submit"
 						className="btn btn-sm btn-primary btn-block">
 						{isRegister ? 'Register' : 'Login'}
-					</button>
+					</Button>
 				</div>
 
 				{isRegister ? (
-					<p className="text-center">
-						Sudah ada akun?
+					<p className="text-sm text-center">
+						Have an account? Login
 						<Link
 							to="/login"
-							className="ml-2 capitalize link link-hover link-accent">
-							Login
+							className="ml-1 capitalize link link-hover link-accent">
+							here
 						</Link>
 					</p>
 				) : (
-					<p className="text-center">
-						Belum memiliki akun?
+					<p className="text-sm text-center">
+						Don't have account? Register
 						<Link
 							to="/register"
-							className="ml-2 capitalize link link-hover link-accent">
-							Register
+							className="ml-1 capitalize link link-hover link-accent">
+							here
 						</Link>
 					</p>
 				)}

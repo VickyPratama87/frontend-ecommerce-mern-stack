@@ -5,6 +5,7 @@ import FormSelect from './Form/FormSelect';
 import { useLoaderData } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import { BiRotateLeft } from 'react-icons/bi';
+import Button from './ui/Button';
 
 const Filter = () => {
 	const { params } = useLoaderData();
@@ -30,11 +31,12 @@ const Filter = () => {
 					defaultValue={category}
 				/>
 
-				<button
+				<Button
 					type="submit"
 					className="btn btn-primary btn-sm btn-outline">
 					<FaSearch /> Search
-				</button>
+				</Button>
+
 				<Link
 					to="/products"
 					className="btn btn-accent btn-sm btn-outline">

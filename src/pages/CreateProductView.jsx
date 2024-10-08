@@ -5,6 +5,7 @@ import FormTextArea from '../components/Form/FormTextArea';
 import FormSelect from '../components/Form/FormSelect';
 import { toast } from 'react-toastify';
 import customAPI from '../api';
+import Button from '../components/ui/Button';
 
 export const loader = (store) => async () => {
 	const user = store.getState().userState.user;
@@ -108,11 +109,11 @@ const CreateProductView = () => {
 						/>
 					</div>
 
-					<button
+					<Button
 						type="submit"
 						className="mt-10 btn btn-sm btn-primary btn-block btn-outline">
 						Add Product
-					</button>
+					</Button>
 				</form>
 			</div>
 		</>

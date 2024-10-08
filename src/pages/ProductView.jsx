@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { BsPlusCircle } from 'react-icons/bs';
 import Filter from '../components/Filter';
 import CartProduct from '../components/CartProduct';
-import Pagination from '../components/Pagination';
+import Pagination from '../components/ui/Pagination';
 import customAPI from '../api';
 
 export const loader = async ({ request }) => {
@@ -36,6 +36,7 @@ const ProductView = () => {
 			</div>
 
 			<Filter />
+
 			<div className="grid gap-5 md:grid-cols-3 lg:grid-cols-4 ">
 				{!products.length ? (
 					<h1 className="mt-5 text-3xl font-bold text-center">Product Not Found</h1>

@@ -8,10 +8,6 @@ const Pagination = () => {
 	const navigate = useNavigate();
 
 	const handlePageChange = (number) => {
-		console.log(number);
-		console.log(search);
-		console.log(pathname);
-
 		const searchParams = new URLSearchParams(search);
 		searchParams.set('page', number);
 		navigate(`${pathname}?${searchParams.toString()}`);
@@ -22,16 +18,18 @@ const Pagination = () => {
 	});
 
 	return (
-		<div className="join">
-			{pages.map((pageNumber) => (
-				<button
-					key={pageNumber}
-					onClick={() => handlePageChange(pageNumber)}
-					className={`btn btn-sm px-4 py-2 border-none rounded-md transition-all duration-200 join-item ${pageNumber === page ? 'bg-primary text-white shadow-lg' : 'bg-gray-200 text-gray-600 hover:bg-primary hover:text-white'}`}>
-					{pageNumber}
-				</button>
-			))}
-		</div>
+		<>
+			<div className="join">
+				{pages.map((pageNumber) => (
+					<button
+						key={pageNumber}
+						onClick={() => handlePageChange(pageNumber)}
+						className={`btn btn-sm px-4 py-2 border-none rounded-md transition-all duration-200 join-item ${pageNumber === page ? 'bg-primary text-white shadow-lg' : 'bg-gray-200 text-gray-600 hover:bg-primary hover:text-white'}`}>
+						{pageNumber}
+					</button>
+				))}
+			</div>
+		</>
 	);
 };
 

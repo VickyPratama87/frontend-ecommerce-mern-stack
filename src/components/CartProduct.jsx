@@ -85,7 +85,7 @@ const CartProduct = ({ item, user }) => {
 					/>
 
 					{item.stock < 1 && (
-						<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+						<div className="absolute flex items-center justify-center bg-black bg-opacity-50 rounded-lg inset-3">
 							<img
 								src="/images/sold-out-1.jpg"
 								alt="sold-out"

@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router-dom';
-import NavList from './NavList';
+import NavList from '../NavList';
 import { BsCart3 } from 'react-icons/bs';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { logoutUser } from '../features/userSlice';
-import { clearCartItem } from '../features/cartSlice';
-import customAPI from '../api';
+import { logoutUser } from '../../features/userSlice';
+import { clearCartItem } from '../../features/cartSlice';
+import customAPI from '../../api';
+import Button from '../ui/Button';
 
 const Nav = () => {
 	const user = useSelector((state) => state.userState.user);
@@ -77,12 +78,12 @@ const Nav = () => {
 					</NavLink>
 
 					{user && (
-						<button
-							className="rounded-md btn btn-sm btn-secondary btn-outline"
-							onClick={handlingLogout}>
+						<Button
+							onClick={handlingLogout}
+							className="rounded-md btn btn-sm btn-outline btn-secondary">
 							<FaSignOutAlt />
 							Logout
-						</button>
+						</Button>
 					)}
 				</div>
 			</div>

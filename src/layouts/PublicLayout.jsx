@@ -1,8 +1,8 @@
 import { Outlet, useNavigation } from 'react-router-dom';
 import Header from '../components/Header';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
+import Footer from '../components/fragments/Footer';
 import Loading from '../components/Loading';
+import Nav from '../components/fragments/Nav';
 
 const PublicLayout = () => {
 	const navigation = useNavigation();

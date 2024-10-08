@@ -6,6 +6,7 @@ import FormInput from '../components/Form/FormInput';
 import { clearCartItem } from '../features/cartSlice';
 import { toast } from 'react-toastify';
 import customAPI from '../api';
+import Button from '../components/ui/Button';
 
 const insertSnapScript = () => {
 	return new Promise((resolve) => {
@@ -103,6 +104,7 @@ const CheckoutView = () => {
 								type="text"
 								name="firstname"
 							/>
+
 							<FormInput
 								label="Last Name"
 								type="text"
@@ -123,11 +125,11 @@ const CheckoutView = () => {
 							name="phone"
 						/>
 
-						<button
+						<Button
 							className="btn btn-primary btn-sm"
 							type="submit">
 							Bayar
-						</button>
+						</Button>
 					</form>
 				</div>
 

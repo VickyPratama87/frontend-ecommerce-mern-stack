@@ -1,17 +1,17 @@
 import React from 'react';
 
-const FormTextArea = ({ label, name, type, defaultValue }) => {
+const FormTextArea = ({ label, name, defaultValue }) => {
 	return (
-		<div className="form-control">
-			<label className="label">
-				<span className="capitalize label-text">{label}</span>
-			</label>
+		<>
+			<div className="form-control">
+				<label className="label">{label}</label>
 
-			<textarea
-				className="textarea textarea-bordered h-36"
-				name={name}
-				defaultValue={defaultValue}></textarea>
-		</div>
+				<textarea
+					className="h-40 textarea textarea-bordered"
+					name={name}
+					defaultValue={defaultValue}></textarea>
+			</div>
+		</>
 	);
 };
 

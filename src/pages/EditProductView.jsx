@@ -6,6 +6,7 @@ import FormInput from '../components/Form/FormInput';
 import FormTextArea from '../components/Form/FormTextArea';
 import { toast } from 'react-toastify';
 import customAPI from '../api';
+import Button from '../components/ui/Button';
 
 export const loader = (store) => async () => {
 	const user = store.getState().userState.user;
@@ -64,49 +65,55 @@ const EditProductView = () => {
 
 	return (
 		<>
-			{product ? (
-				<form
-					onSubmit={handleSubmit}
-					encType="multipart/form-data">
-					<FormSelect
-						label="Product Category"
-						name="category"
-						list={categories}
-						defaultValue={product.category}
-					/>
-					<FormInput
-						label="Product Name"
-						name="name"
-						type="text"
-						defaultValue={product.name}
-					/>
-					<FormInput
-						label="Product Price"
-						name="price"
-						type="number"
-						defaultValue={product.price}
-					/>
-					<FormInput
-						label="Product Stock"
-						name="stock"
-						type="number"
-						defaultValue={product.stock}
-					/>
-					<FormTextArea
-						label="Product Description"
-						name="description"
-						defaultValue={product.description}
-					/>
+			<div className="mt-24">
+				{product ? (
+					<form
+						onSubmit={handleSubmit}
+						encType="multipart/form-data">
+						<FormSelect
+							label="Product Category"
+							name="category"
+							list={categories}
+							defaultValue={product.category}
+						/>
 
-					<button
-						type="submit"
-						className="mt-10 btn btn-primary btn-block btn-sm btn-outline">
-						Update Product
-					</button>
-				</form>
-			) : (
-				<Loading />
-			)}
+						<FormInput
+							label="Product Name"
+							name="name"
+							type="text"
+							defaultValue={product.name}
+						/>
+
+						<FormInput
+							label="Product Price"
+							name="price"
+							type="number"
+							defaultValue={product.price}
+						/>
+
+						<FormInput
+							label="Product Stock"
+							name="stock"
+							type="number"
+							defaultValue={product.stock}
+						/>
+
+						<FormTextArea
+							label="Product Description"
+							name="description"
+							defaultValue={product.description}
+						/>
+
+						<Button
+							type="submit"
+							className="mt-10 btn btn-primary btn-block btn-sm btn-outline">
+							Update Product
+						</Button>
+					</form>
+				) : (
+					<Loading />
+				)}
+			</div>
 		</>
 	);
 };
